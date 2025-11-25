@@ -1,0 +1,35 @@
+{
+    "node": "n8n-nodes-musicgpt.MusicGPT",
+    "nodeVersion": "1.0",
+    "codex": {
+        "categories": [
+            "AI",
+            "Audio",
+            "Music"
+        ],
+        "subcategories": {
+            "AI": [
+                "Audio Processing"
+            ],
+            "Audio": [
+                "Generation",
+                "Conversion"
+            ],
+            "Music": [
+                "AI Generation"
+            ]
+        },
+        "resources": {
+            "credentialDocumentation": [
+                {
+                    "url": "https://docs.musicgpt.com/authentication"
+                }
+            ],
+            "primaryDocumentation": [
+                {
+                    "url": "https://docs.musicgpt.com"
+                }
+            ]
+        }
+    }
+}
