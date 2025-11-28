@@ -21,6 +21,14 @@ export class MusicGPTApi implements ICredentialType {
             required: true,
             description: 'Your MusicGPT API key. Find it in your account settings.',
         },
+        {
+            displayName: 'API Base URL',
+            name: 'baseUrl',
+            type: 'string',
+            default: 'https://api.musicgpt.com',
+            placeholder: 'https://api.musicgpt.com',
+            description: 'The base URL for the MusicGPT API. Leave empty to use default (https://api.musicgpt.com).',
+        },
     ];
 
     authenticate: IAuthenticateGeneric = {

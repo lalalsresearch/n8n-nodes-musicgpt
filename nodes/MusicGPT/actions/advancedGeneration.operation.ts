@@ -63,7 +63,7 @@ export async function remix(
         }
 
         const credentials = await this.getCredentials('musicGPTApi');
-        const baseUrl = (credentials.baseUrl as string) || process.env.API_BASE_URL || '';
+        const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
 
         const options = {
             method: 'POST' as const,
@@ -81,7 +81,7 @@ export async function remix(
             json: true,
         };
 
-        const response = await this.helpers.requestWithAuthentication.call(
+        const response = await this.helpers.httpRequestWithAuthentication.call(
             this,
             'musicGPTApi',
             options,
@@ -177,7 +177,7 @@ export async function extend(
         }
 
         const credentials = await this.getCredentials('musicGPTApi');
-        const baseUrl = (credentials.baseUrl as string) || process.env.API_BASE_URL || '';
+        const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
 
         const options = {
             method: 'POST' as const,
@@ -195,7 +195,7 @@ export async function extend(
             json: true,
         };
 
-        const response = await this.helpers.requestWithAuthentication.call(
+        const response = await this.helpers.httpRequestWithAuthentication.call(
             this,
             'musicGPTApi',
             options,
@@ -289,7 +289,7 @@ export async function inpaint(
         }
 
         const credentials = await this.getCredentials('musicGPTApi');
-        const baseUrl = (credentials.baseUrl as string) || process.env.API_BASE_URL || '';
+        const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
 
         const options = {
             method: 'POST' as const,
@@ -307,7 +307,7 @@ export async function inpaint(
             json: true,
         };
 
-        const response = await this.helpers.requestWithAuthentication.call(
+        const response = await this.helpers.httpRequestWithAuthentication.call(
             this,
             'musicGPTApi',
             options,
@@ -400,7 +400,7 @@ export async function singOverInstrumental(
         }
 
         const credentials = await this.getCredentials('musicGPTApi');
-        const baseUrl = (credentials.baseUrl as string) || process.env.API_BASE_URL || '';
+        const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
 
         const options = {
             method: 'POST' as const,
@@ -418,7 +418,7 @@ export async function singOverInstrumental(
             json: true,
         };
 
-        const response = await this.helpers.requestWithAuthentication.call(
+        const response = await this.helpers.httpRequestWithAuthentication.call(
             this,
             'musicGPTApi',
             options,
@@ -492,7 +492,7 @@ export async function soundGenerator(
     }
 
     const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || process.env.API_BASE_URL || '';
+    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
 
     const form: any = {
         prompt: cleanPrompt,
@@ -510,7 +510,7 @@ export async function soundGenerator(
         json: true,
     };
 
-    const response = await this.helpers.requestWithAuthentication.call(
+    const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
         'musicGPTApi',
         options,

@@ -35,7 +35,7 @@ export async function deecho(
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
     const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || process.env.API_BASE_URL || '';
+    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
 
     const formData: any = {};
 
@@ -62,7 +62,7 @@ export async function deecho(
         json: true,
     };
 
-    const response = await this.helpers.requestWithAuthentication.call(
+    const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
         'musicGPTApi',
         options,
@@ -88,7 +88,7 @@ export async function dereverb(
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
     const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || process.env.API_BASE_URL || '';
+    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
 
     const formData: any = {};
 
@@ -115,7 +115,7 @@ export async function dereverb(
         json: true,
     };
 
-    const response = await this.helpers.requestWithAuthentication.call(
+    const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
         'musicGPTApi',
         options,
@@ -143,7 +143,7 @@ export async function audioMastering(
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
     const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || process.env.API_BASE_URL || '';
+    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
 
     const formData: any = {};
 
@@ -197,7 +197,7 @@ export async function audioMastering(
         json: true,
     };
 
-    const response = await this.helpers.requestWithAuthentication.call(
+    const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
         'musicGPTApi',
         options,
@@ -225,7 +225,7 @@ export async function trimAudio(
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
     const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || process.env.API_BASE_URL || '';
+    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
 
     const formData: any = {
         start_time: String(start_time),
@@ -255,7 +255,7 @@ export async function trimAudio(
         json: true,
     };
 
-    const response = await this.helpers.requestWithAuthentication.call(
+    const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
         'musicGPTApi',
         options,
@@ -282,7 +282,7 @@ export async function changeAudioSpeed(
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
     const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || process.env.API_BASE_URL || '';
+    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
 
     const formData: any = {
         speed_factor: String(speed_factor),
@@ -311,7 +311,7 @@ export async function changeAudioSpeed(
         json: true,
     };
 
-    const response = await this.helpers.requestWithAuthentication.call(
+    const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
         'musicGPTApi',
         options,
@@ -337,7 +337,7 @@ export async function audioToMidi(
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
     const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || process.env.API_BASE_URL || '';
+    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
 
     const formData: any = {};
 
@@ -364,7 +364,7 @@ export async function audioToMidi(
         json: true,
     };
 
-    const response = await this.helpers.requestWithAuthentication.call(
+    const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
         'musicGPTApi',
         options,
@@ -390,7 +390,7 @@ export async function extractKeyBpm(
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
     const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || process.env.API_BASE_URL || '';
+    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
 
     const formData: any = {};
 
@@ -417,7 +417,7 @@ export async function extractKeyBpm(
         json: true,
     };
 
-    const response = await this.helpers.requestWithAuthentication.call(
+    const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
         'musicGPTApi',
         options,
@@ -446,7 +446,7 @@ export async function fileConvert(
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
     const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || process.env.API_BASE_URL || '';
+    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
 
     const formData: any = {
         target_format: target_format,
@@ -477,7 +477,7 @@ export async function fileConvert(
         json: true,
     };
 
-    const response = await this.helpers.requestWithAuthentication.call(
+    const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
         'musicGPTApi',
         options,
@@ -504,7 +504,7 @@ export async function audioTranscribe(
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
     const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || process.env.API_BASE_URL || '';
+    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
 
     const formData: any = {};
 
@@ -535,7 +535,7 @@ export async function audioTranscribe(
         json: true,
     };
 
-    const response = await this.helpers.requestWithAuthentication.call(
+    const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
         'musicGPTApi',
         options,
