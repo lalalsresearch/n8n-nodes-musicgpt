@@ -1,4 +1,5 @@
 import { IExecuteFunctions, ILoadOptionsFunctions, IPollFunctions, IHttpRequestMethods } from 'n8n-workflow';
+import { API_BASE_URL } from '../constants';
 
 export async function apiRequest(
     this: IExecuteFunctions | ILoadOptionsFunctions | IPollFunctions,
@@ -7,13 +8,11 @@ export async function apiRequest(
     body: any = {},
     query: any = {},
 ): Promise<any> {
-    const baseUrl = 'https://api.musicgpt.com';
-
     const options: any = {
         method: method as IHttpRequestMethods,
         body,
         qs: query,
-        url: `${baseUrl}${endpoint}`,
+        url: `${API_BASE_URL}${endpoint}`,
         json: true,
     };
 

@@ -1,5 +1,6 @@
 import { IExecuteFunctions, IDataObject, INodeExecutionData } from 'n8n-workflow';
 import { apiRequest } from '../transport';
+import { API_BASE_URL } from '../constants';
 
 // Helper function to handle file upload or URL
 async function prepareAudioData(
@@ -133,7 +134,7 @@ export async function voiceChanger(
     const pitch = this.getNodeParameter('pitch', index, 0) as number;
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
-    const baseUrl = 'https://api.musicgpt.com';
+    
 
     const formData: any = {
         voice_id: voice_id,
@@ -159,7 +160,7 @@ export async function voiceChanger(
 
     const options = {
         method: 'POST' as const,
-        url: `${baseUrl}/api/public/v1/VoiceChanger`,
+        url: `${API_BASE_URL}/api/public/v1/VoiceChanger`,
         formData: formData,
         json: true,
     };
@@ -192,7 +193,7 @@ export async function coverSong(
     const pitch = this.getNodeParameter('pitch', index, 0) as number;
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
-    const baseUrl = 'https://api.musicgpt.com';
+    
 
     const formData: any = {
         voice_id: voice_id,
@@ -217,7 +218,7 @@ export async function coverSong(
 
     const options = {
         method: 'POST' as const,
-        url: `${baseUrl}/api/public/v1/Cover`,
+        url: `${API_BASE_URL}/api/public/v1/Cover`,
         formData: formData,
         json: true,
     };
@@ -253,7 +254,7 @@ export async function extraction(
     const stemsJson = JSON.stringify(stems);
     const preprocessingJson = JSON.stringify(preprocessing_options);
 
-    const baseUrl = 'https://api.musicgpt.com';
+    
 
     const formData: any = {
         stems: stemsJson,
@@ -278,7 +279,7 @@ export async function extraction(
 
     const options = {
         method: 'POST' as const,
-        url: `${baseUrl}/api/public/v1/Extraction`,
+        url: `${API_BASE_URL}/api/public/v1/Extraction`,
         formData: formData,
         json: true,
     };
@@ -309,7 +310,7 @@ export async function denoise(
     const audioData = await prepareAudioData.call(this, index);
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
-    const baseUrl = 'https://api.musicgpt.com';
+    
 
     const formData: any = {};
 
@@ -331,7 +332,7 @@ export async function denoise(
 
     const options = {
         method: 'POST' as const,
-        url: `${baseUrl}/api/public/v1/denoise`,
+        url: `${API_BASE_URL}/api/public/v1/denoise`,
         formData: formData,
         json: true,
     };
