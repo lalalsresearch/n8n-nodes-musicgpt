@@ -1,5 +1,6 @@
 import { IExecuteFunctions, IDataObject, INodeExecutionData } from 'n8n-workflow';
 import { apiRequest } from '../transport';
+import { API_BASE_URL } from '../constants';
 
 async function prepareAudioData(
     this: IExecuteFunctions,
@@ -62,12 +63,9 @@ export async function remix(
             formData.webhook_url = webhook_url;
         }
 
-        const credentials = await this.getCredentials('musicGPTApi');
-        const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
-
         const options = {
             method: 'POST' as const,
-            url: `${baseUrl}/api/public/v1/Remix`,
+            url: `${API_BASE_URL}/api/public/v1/Remix`,
             formData: {
                 ...formData,
                 audio_file: {
@@ -176,12 +174,11 @@ export async function extend(
             formData.webhook_url = webhook_url;
         }
 
-        const credentials = await this.getCredentials('musicGPTApi');
-        const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+        
 
         const options = {
             method: 'POST' as const,
-            url: `${baseUrl}/api/public/v1/extend`,
+            url: `${API_BASE_URL}/api/public/v1/extend`,
             formData: {
                 ...formData,
                 audio_file: {
@@ -288,12 +285,11 @@ export async function inpaint(
             formData.webhook_url = webhook_url;
         }
 
-        const credentials = await this.getCredentials('musicGPTApi');
-        const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+        
 
         const options = {
             method: 'POST' as const,
-            url: `${baseUrl}/api/public/v1/inpaint`,
+            url: `${API_BASE_URL}/api/public/v1/inpaint`,
             formData: {
                 ...formData,
                 audio_file: {
@@ -399,12 +395,11 @@ export async function singOverInstrumental(
             formData.webhook_url = webhook_url;
         }
 
-        const credentials = await this.getCredentials('musicGPTApi');
-        const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+        
 
         const options = {
             method: 'POST' as const,
-            url: `${baseUrl}/api/public/v1/sing_over_instrumental`,
+            url: `${API_BASE_URL}/api/public/v1/sing_over_instrumental`,
             formData: {
                 ...formData,
                 audio_file: {
@@ -491,8 +486,7 @@ export async function soundGenerator(
         throw new Error(`Prompt is too long (${cleanPrompt.length} characters). Maximum allowed is 300 characters.`);
     }
 
-    const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+    
 
     const form: any = {
         prompt: cleanPrompt,
@@ -505,7 +499,7 @@ export async function soundGenerator(
 
     const options = {
         method: 'POST' as const,
-        url: `${baseUrl}/api/public/v1/sound_generator`,
+        url: `${API_BASE_URL}/api/public/v1/sound_generator`,
         form: form,
         json: true,
     };
