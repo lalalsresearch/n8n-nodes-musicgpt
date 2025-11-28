@@ -133,8 +133,7 @@ export async function voiceChanger(
     const pitch = this.getNodeParameter('pitch', index, 0) as number;
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
-    const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+    const baseUrl = 'https://api.musicgpt.com';
 
     const formData: any = {
         voice_id: voice_id,
@@ -193,8 +192,7 @@ export async function coverSong(
     const pitch = this.getNodeParameter('pitch', index, 0) as number;
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
-    const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+    const baseUrl = 'https://api.musicgpt.com';
 
     const formData: any = {
         voice_id: voice_id,
@@ -255,8 +253,7 @@ export async function extraction(
     const stemsJson = JSON.stringify(stems);
     const preprocessingJson = JSON.stringify(preprocessing_options);
 
-    const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+    const baseUrl = 'https://api.musicgpt.com';
 
     const formData: any = {
         stems: stemsJson,
@@ -312,8 +309,7 @@ export async function denoise(
     const audioData = await prepareAudioData.call(this, index);
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
-    const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+    const baseUrl = 'https://api.musicgpt.com';
 
     const formData: any = {};
 

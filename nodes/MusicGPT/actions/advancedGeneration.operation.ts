@@ -62,8 +62,7 @@ export async function remix(
             formData.webhook_url = webhook_url;
         }
 
-        const credentials = await this.getCredentials('musicGPTApi');
-        const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+        const baseUrl = 'https://api.musicgpt.com';
 
         const options = {
             method: 'POST' as const,
@@ -176,8 +175,7 @@ export async function extend(
             formData.webhook_url = webhook_url;
         }
 
-        const credentials = await this.getCredentials('musicGPTApi');
-        const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+        const baseUrl = 'https://api.musicgpt.com';
 
         const options = {
             method: 'POST' as const,
@@ -288,8 +286,7 @@ export async function inpaint(
             formData.webhook_url = webhook_url;
         }
 
-        const credentials = await this.getCredentials('musicGPTApi');
-        const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+        const baseUrl = 'https://api.musicgpt.com';
 
         const options = {
             method: 'POST' as const,
@@ -399,8 +396,7 @@ export async function singOverInstrumental(
             formData.webhook_url = webhook_url;
         }
 
-        const credentials = await this.getCredentials('musicGPTApi');
-        const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+        const baseUrl = 'https://api.musicgpt.com';
 
         const options = {
             method: 'POST' as const,
@@ -491,8 +487,7 @@ export async function soundGenerator(
         throw new Error(`Prompt is too long (${cleanPrompt.length} characters). Maximum allowed is 300 characters.`);
     }
 
-    const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+    const baseUrl = 'https://api.musicgpt.com';
 
     const form: any = {
         prompt: cleanPrompt,

@@ -34,8 +34,7 @@ export async function deecho(
     const audioData = await prepareAudioData.call(this, index);
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
-    const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+    const baseUrl = 'https://api.musicgpt.com';
 
     const formData: any = {};
 
@@ -87,8 +86,7 @@ export async function dereverb(
     const audioData = await prepareAudioData.call(this, index);
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
-    const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+    const baseUrl = 'https://api.musicgpt.com';
 
     const formData: any = {};
 
@@ -142,8 +140,7 @@ export async function audioMastering(
     const output_extension = this.getNodeParameter('output_extension', index, '') as string;
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
-    const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+    const baseUrl = 'https://api.musicgpt.com';
 
     const formData: any = {};
 
@@ -224,8 +221,7 @@ export async function trimAudio(
     const end_time = this.getNodeParameter('end_time', index) as number;
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
-    const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+    const baseUrl = 'https://api.musicgpt.com';
 
     const formData: any = {
         start_time: String(start_time),
@@ -281,8 +277,7 @@ export async function changeAudioSpeed(
     const speed_factor = this.getNodeParameter('speed_factor', index) as number;
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
-    const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+    const baseUrl = 'https://api.musicgpt.com';
 
     const formData: any = {
         speed_factor: String(speed_factor),
@@ -336,8 +331,7 @@ export async function audioToMidi(
     const audioData = await prepareAudioData.call(this, index);
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
-    const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+    const baseUrl = 'https://api.musicgpt.com';
 
     const formData: any = {};
 
@@ -389,8 +383,7 @@ export async function extractKeyBpm(
     const audioData = await prepareAudioData.call(this, index);
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
-    const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+    const baseUrl = 'https://api.musicgpt.com';
 
     const formData: any = {};
 
@@ -445,8 +438,7 @@ export async function fileConvert(
     const target_bit_depth = this.getNodeParameter('target_bit_depth', index, '16') as string;
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
-    const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+    const baseUrl = 'https://api.musicgpt.com';
 
     const formData: any = {
         target_format: target_format,
@@ -503,8 +495,7 @@ export async function audioTranscribe(
     const language = this.getNodeParameter('language', index, '') as string;
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
-    const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+    const baseUrl = 'https://api.musicgpt.com';
 
     const formData: any = {};
 

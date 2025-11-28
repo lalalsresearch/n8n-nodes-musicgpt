@@ -7,8 +7,7 @@ export async function apiRequest(
     body: any = {},
     query: any = {},
 ): Promise<any> {
-    const credentials = await this.getCredentials('musicGPTApi');
-    const baseUrl = (credentials.baseUrl as string) || 'https://api.musicgpt.com';
+    const baseUrl = 'https://api.musicgpt.com';
 
     const options: any = {
         method: method as IHttpRequestMethods,
