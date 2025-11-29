@@ -94,35 +94,99 @@ export const getConversionByIdFields: INodeProperties[] = [
         type: 'options',
         options: [
             {
-                name: 'Voice Changer',
-                value: 'voice_changer',
+                name: 'Audio Generation',
+                value: 'MUSIC_AI',
             },
             {
                 name: 'Text to Speech',
-                value: 'text_to_speech',
+                value: 'TEXT_TO_SPEECH',
+            },
+            {
+                name: 'Voice Changer',
+                value: 'VOICE_CONVERSION',
             },
             {
                 name: 'Cover Song',
-                value: 'cover_song',
-            },
-            {
-                name: 'Audio Generation',
-                value: 'audio_generation',
+                value: 'COVER',
             },
             {
                 name: 'Remix',
-                value: 'remix',
+                value: 'REMIX',
+            },
+            {
+                name: 'Extend',
+                value: 'EXTEND',
+            },
+            {
+                name: 'Inpaint',
+                value: 'INPAINT',
+            },
+            {
+                name: 'Sing Over Instrumental',
+                value: 'SING_OVER_INSTRUMENTAL',
             },
             {
                 name: 'Extraction',
-                value: 'extraction',
+                value: 'EXTRACTION',
             },
             {
-                name: 'Other',
-                value: 'other',
+                name: 'Stem Separation',
+                value: 'STEMS_SEPARATION',
+            },
+            {
+                name: 'Vocal Extraction',
+                value: 'VOCAL_EXTRACTION',
+            },
+            {
+                name: 'Denoising',
+                value: 'DENOISING',
+            },
+            {
+                name: 'Deecho',
+                value: 'DEECHO',
+            },
+            {
+                name: 'Dereverb',
+                value: 'DEREVERB',
+            },
+            {
+                name: 'Audio Mastering',
+                value: 'AUDIO_MASTERING',
+            },
+            {
+                name: 'Audio Cutter',
+                value: 'AUDIO_CUTTER',
+            },
+            {
+                name: 'Audio Speed Changer',
+                value: 'AUDIO_SPEED_CHANGER',
+            },
+            {
+                name: 'Audio to MIDI',
+                value: 'AUDIO_TO_MIDI',
+            },
+            {
+                name: 'Key/BPM Extraction',
+                value: 'KEY_BPM_EXTRACTION',
+            },
+            {
+                name: 'File Conversion',
+                value: 'FILE_CONVERSION',
+            },
+            {
+                name: 'Audio Transcription',
+                value: 'AUDIO_TRANSCRIPTION',
+            },
+            {
+                name: 'Sound Generator',
+                value: 'SOUND_GENERATOR',
+            },
+            {
+                name: 'Lyrics Generator',
+                value: 'LYRICS_GENERATOR',
             },
         ],
-        default: 'voice_changer',
+        default: 'MUSIC_AI',
         required: true,
         description: 'Type of conversion to retrieve',
         displayOptions: {
@@ -173,32 +237,96 @@ export const getConversionsByUserFields: INodeProperties[] = [
                 value: '',
             },
             {
-                name: 'Voice Changer',
-                value: 'voice_changer',
+                name: 'Audio Generation',
+                value: 'MUSIC_AI',
             },
             {
                 name: 'Text to Speech',
-                value: 'text_to_speech',
+                value: 'TEXT_TO_SPEECH',
+            },
+            {
+                name: 'Voice Changer',
+                value: 'VOICE_CONVERSION',
             },
             {
                 name: 'Cover Song',
-                value: 'cover_song',
-            },
-            {
-                name: 'Audio Generation',
-                value: 'audio_generation',
+                value: 'COVER',
             },
             {
                 name: 'Remix',
-                value: 'remix',
+                value: 'REMIX',
+            },
+            {
+                name: 'Extend',
+                value: 'EXTEND',
+            },
+            {
+                name: 'Inpaint',
+                value: 'INPAINT',
+            },
+            {
+                name: 'Sing Over Instrumental',
+                value: 'SING_OVER_INSTRUMENTAL',
             },
             {
                 name: 'Extraction',
-                value: 'extraction',
+                value: 'EXTRACTION',
             },
             {
-                name: 'Other',
-                value: 'other',
+                name: 'Stem Separation',
+                value: 'STEMS_SEPARATION',
+            },
+            {
+                name: 'Vocal Extraction',
+                value: 'VOCAL_EXTRACTION',
+            },
+            {
+                name: 'Denoising',
+                value: 'DENOISING',
+            },
+            {
+                name: 'Deecho',
+                value: 'DEECHO',
+            },
+            {
+                name: 'Dereverb',
+                value: 'DEREVERB',
+            },
+            {
+                name: 'Audio Mastering',
+                value: 'AUDIO_MASTERING',
+            },
+            {
+                name: 'Audio Cutter',
+                value: 'AUDIO_CUTTER',
+            },
+            {
+                name: 'Audio Speed Changer',
+                value: 'AUDIO_SPEED_CHANGER',
+            },
+            {
+                name: 'Audio to MIDI',
+                value: 'AUDIO_TO_MIDI',
+            },
+            {
+                name: 'Key/BPM Extraction',
+                value: 'KEY_BPM_EXTRACTION',
+            },
+            {
+                name: 'File Conversion',
+                value: 'FILE_CONVERSION',
+            },
+            {
+                name: 'Audio Transcription',
+                value: 'AUDIO_TRANSCRIPTION',
+            },
+            {
+                name: 'Sound Generator',
+                value: 'SOUND_GENERATOR',
+            },
+            {
+                name: 'Lyrics Generator',
+                value: 'LYRICS_GENERATOR',
             },
         ],
         default: '',

@@ -40,6 +40,7 @@ export async function generateAudio(
     const make_instrumental = this.getNodeParameter('make_instrumental', index, false) as boolean;
     const vocal_only = this.getNodeParameter('vocal_only', index, false) as boolean;
     const negative_tags = this.getNodeParameter('negative_tags', index, '') as string;
+    const output_length = this.getNodeParameter('output_length', index, 0) as number;
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
     const body: IDataObject = {
@@ -59,6 +60,9 @@ export async function generateAudio(
     }
     if (negative_tags) {
         body.negative_tags = negative_tags;
+    }
+    if (output_length > 0) {
+        body.output_length = output_length;
     }
     if (webhook_url) {
         body.webhook_url = webhook_url;

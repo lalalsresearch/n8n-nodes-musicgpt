@@ -191,6 +191,24 @@ export const generateAudioFields: INodeProperties[] = [
         },
     },
     {
+        displayName: 'Output Length',
+        name: 'output_length',
+        type: 'number',
+        default: 0,
+        placeholder: '120',
+        description: 'Desired output audio length in seconds (0 for default length)',
+        typeOptions: {
+            minValue: 0,
+            maxValue: 300,
+        },
+        displayOptions: {
+            show: {
+                resource: ['audioGeneration'],
+                operation: ['generateAudio'],
+            },
+        },
+    },
+    {
         displayName: 'Webhook URL',
         name: 'webhook_url',
         type: 'string',
