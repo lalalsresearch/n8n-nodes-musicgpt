@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.5] - 2026-01-13
+
+### Fixed
+- Added missing `pairedItem` linking to all operation functions for proper workflow data tracking
+- All INodeExecutionData objects now include `pairedItem: { item: index }` property
+- Affects all operations in search, audioGeneration, audioProcessing, and advancedGeneration modules
+
+## [0.1.4] - 2025-11-05
+
+## [0.1.3] - 2025-11-05
+
+## [0.1.2] - 2025-11-05
+
+## [0.1.1] - 2025-11-05
+
 ## [0.1.0] - 2025-11-05
 
 ### Added
@@ -80,6 +95,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Version History
 
+- **0.1.5** - Fixed missing pairedItem linking in all operations
+- **0.1.4** - Previous version
+- **0.1.3** - Previous version
+- **0.1.2** - Previous version
+- **0.1.1** - Previous version
 - **0.1.0** - Initial release with 25 operations and 2 triggers
 
 ---

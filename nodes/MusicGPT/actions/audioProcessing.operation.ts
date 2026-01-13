@@ -76,6 +76,7 @@ export async function deecho(
                 conversion_id: response.conversion_id,
                 eta: response.eta,
             },
+            pairedItem: { item: index },
         },
     ];
 }
@@ -128,6 +129,7 @@ export async function dereverb(
                 conversion_id: response.conversion_id,
                 eta: response.eta,
             },
+            pairedItem: { item: index },
         },
     ];
 }
@@ -209,6 +211,7 @@ export async function audioMastering(
                 conversion_id: response.conversion_id,
                 eta: response.eta,
             },
+            pairedItem: { item: index },
         },
     ];
 }
@@ -266,6 +269,7 @@ export async function trimAudio(
                 conversion_id: response.conversion_id,
                 eta: response.eta,
             },
+            pairedItem: { item: index },
         },
     ];
 }
@@ -321,6 +325,7 @@ export async function changeAudioSpeed(
                 conversion_id: response.conversion_id,
                 eta: response.eta,
             },
+            pairedItem: { item: index },
         },
     ];
 }
@@ -373,6 +378,7 @@ export async function audioToMidi(
                 conversion_id: response.conversion_id,
                 eta: response.eta,
             },
+            pairedItem: { item: index },
         },
     ];
 }
@@ -425,6 +431,7 @@ export async function extractKeyBpm(
                 conversion_id: response.conversion_id,
                 eta: response.eta,
             },
+            pairedItem: { item: index },
         },
     ];
 }
@@ -484,6 +491,7 @@ export async function fileConvert(
                 conversion_id: response.conversion_id,
                 eta: response.eta,
             },
+            pairedItem: { item: index },
         },
     ];
 }
@@ -541,6 +549,7 @@ export async function audioTranscribe(
                 conversion_id: response.conversion_id,
                 eta: response.eta,
             },
+            pairedItem: { item: index },
         },
     ];
 }

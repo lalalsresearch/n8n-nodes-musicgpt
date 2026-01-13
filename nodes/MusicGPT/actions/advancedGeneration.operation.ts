@@ -94,6 +94,7 @@ export async function remix(
                     conversion_id_2: response.conversion_id_2,
                     eta: response.eta,
                 },
+                pairedItem: { item: index },
             },
         ];
     } else {
@@ -132,6 +133,7 @@ export async function remix(
                     conversion_id_2: response.conversion_id_2,
                     eta: response.eta,
                 },
+                pairedItem: { item: index },
             },
         ];
     }
@@ -207,6 +209,7 @@ export async function extend(
                     conversion_id_2: response.conversion_id_2,
                     eta: response.eta,
                 },
+                pairedItem: { item: index },
             },
         ];
     } else {
@@ -246,6 +249,7 @@ export async function extend(
                     conversion_id_2: response.conversion_id_2,
                     eta: response.eta,
                 },
+                pairedItem: { item: index },
             },
         ];
     }
@@ -318,6 +322,7 @@ export async function inpaint(
                     conversion_id_2: response.conversion_id_2,
                     eta: response.eta,
                 },
+                pairedItem: { item: index },
             },
         ];
     } else {
@@ -354,6 +359,7 @@ export async function inpaint(
                     conversion_id_2: response.conversion_id_2,
                     eta: response.eta,
                 },
+                pairedItem: { item: index },
             },
         ];
     }
@@ -428,6 +434,7 @@ export async function singOverInstrumental(
                     conversion_id_2: response.conversion_id_2,
                     eta: response.eta,
                 },
+                pairedItem: { item: index },
             },
         ];
     } else {
@@ -463,6 +470,7 @@ export async function singOverInstrumental(
                     conversion_id_2: response.conversion_id_2,
                     eta: response.eta,
                 },
+                pairedItem: { item: index },
             },
         ];
     }
@@ -520,6 +528,7 @@ export async function soundGenerator(
                 credit_estimate: response.credit_estimate,
                 message: response.message,
             },
+            pairedItem: { item: index },
         },
     ];
 }
@@ -538,6 +547,7 @@ export async function promptToLyrics(
                 success: response.success,
                 lyrics: response.lyrics,
             },
+            pairedItem: { item: index },
         },
     ];
 }

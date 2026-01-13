@@ -80,6 +80,7 @@ export async function generateAudio(
                 eta: response.eta,
                 message: response.message,
             },
+            pairedItem: { item: index },
         },
     ];
 }
@@ -123,6 +124,7 @@ export async function textToSpeech(
                 conversion_id: response.conversion_id,
                 eta: response.eta,
             },
+            pairedItem: { item: index },
         },
     ];
 }
@@ -183,6 +185,7 @@ export async function voiceChanger(
                 conversion_id: response.conversion_id,
                 eta: response.eta,
             },
+            pairedItem: { item: index },
         },
     ];
 }
@@ -241,6 +244,7 @@ export async function coverSong(
                 conversion_id: response.conversion_id,
                 eta: response.eta,
             },
+            pairedItem: { item: index },
         },
     ];
 }
@@ -302,6 +306,7 @@ export async function extraction(
                 conversion_id: response.conversion_id,
                 eta: response.eta,
             },
+            pairedItem: { item: index },
         },
     ];
 }
@@ -355,6 +360,7 @@ export async function denoise(
                 conversion_id: response.conversion_id,
                 eta: response.eta,
             },
+            pairedItem: { item: index },
         },
     ];
 }

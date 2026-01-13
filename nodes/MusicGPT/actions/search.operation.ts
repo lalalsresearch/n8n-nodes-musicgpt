@@ -21,8 +21,8 @@ export async function getAllVoices(
 			id: voice.voice_id,
 			json: voice,
 		}));
-		
-		return voices.map((voice: any) => ({ json: voice }));
+
+		return voices.map((voice: any) => ({ json: voice, pairedItem: { item: index } }));
 	}
 
 	return [];
@@ -56,6 +56,7 @@ export async function searchVoices(
 				...voice,
 				id: voice.voice_id,
 			},
+			pairedItem: { item: index },
 		}));
 	}
 
@@ -90,6 +91,7 @@ export async function getConversionById(
 					...response.conversion,
 					id: response.conversion.conversion_id || response.conversion.task_id,
 				},
+				pairedItem: { item: index },
 			},
 		];
 	}
@@ -134,6 +136,7 @@ export async function getConversionsByUser(
 				...conversion,
 				id: conversion.conversion_id || conversion.task_id || conversion.id,
 			},
+			pairedItem: { item: index },
 		}));
 	}
 
