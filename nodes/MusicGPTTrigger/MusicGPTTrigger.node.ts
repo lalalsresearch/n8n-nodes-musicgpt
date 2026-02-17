@@ -4,6 +4,8 @@ import {
     INodeType,
     INodeTypeDescription,
     IPollFunctions,
+    NodeApiError,
+    NodeOperationError,
 } from 'n8n-workflow';
 
 import { apiRequest } from '../MusicGPT/transport';
@@ -35,6 +37,7 @@ export class MusicGPTTrigger implements INodeType {
                 displayName: 'Trigger On',
                 name: 'triggerOn',
                 type: 'options',
+                noDataExpression: true,
                 options: [
                     {
                         name: 'Get Conversion',
@@ -64,7 +67,7 @@ export class MusicGPTTrigger implements INodeType {
             const conversion_id = this.getNodeParameter('conversion_id', '') as string;
 
             if (!task_id && !conversion_id) {
-                throw new Error('Either Task ID or Conversion ID must be provided');
+                throw new NodeOperationError(this.getNode(), 'Either Task ID or Conversion ID must be provided');
             }
 
             const query: IDataObject = {
@@ -97,8 +100,8 @@ export class MusicGPTTrigger implements INodeType {
                         ],
                     ];
                 }
-            } catch (error) {
-                throw error;
+            } catch (error: any) {
+                throw new NodeApiError(this.getNode(), error);
             }
 
             return null;
@@ -148,8 +151,8 @@ export class MusicGPTTrigger implements INodeType {
                 if (response.success && Array.isArray(response.conversions)) {
                     conversions = response.conversions;
                 }
-            } catch (error) {
-                throw error;
+            } catch (error: any) {
+                throw new NodeApiError(this.getNode(), error);
             }
 
             if (!startDate) {

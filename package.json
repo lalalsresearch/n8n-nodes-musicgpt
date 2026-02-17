@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-musicgpt",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "n8n node for MusicGPT API integration",
   "keywords": [
     "n8n-community-node-package",
@@ -45,12 +45,18 @@
       "dist/nodes/MusicGPTTrigger/MusicGPTTrigger.node.js"
     ]
   },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
   "devDependencies": {
     "@types/node": "^20.0.0",
-    "n8n-workflow": "^1.0.0",
-    "typescript": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.56.0",
+    "@typescript-eslint/parser": "^8.56.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-n8n-nodes-base": "^1.16.6",
     "gulp": "^4.0.2",
-    "prettier": "^3.0.0"
-  },
-  "dependencies": {}
+    "n8n-workflow": "^1.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0"
+  }
 }

@@ -267,7 +267,7 @@ export const inpaintFields: INodeProperties[] = [
     ...audioSourceFields('inpaint'),
     {
         displayName: 'Start Time',
-        name: 'start_time',
+        name: 'replace_start_at',
         type: 'number',
         default: 0,
         typeOptions: {
@@ -283,7 +283,7 @@ export const inpaintFields: INodeProperties[] = [
     },
     {
         displayName: 'End Time',
-        name: 'end_time',
+        name: 'replace_end_at',
         type: 'number',
         default: 0,
         typeOptions: {
@@ -484,34 +484,6 @@ export const promptToLyricsFields: INodeProperties[] = [
         },
         placeholder: 'A hopeful song about starting over',
         description: 'Describe the theme or idea you want lyrics for',
-        displayOptions: {
-            show: {
-                resource: ['advancedGeneration'],
-                operation: ['promptToLyrics'],
-            },
-        },
-    },
-    {
-        displayName: 'Style',
-        name: 'style',
-        type: 'string',
-        default: '',
-        placeholder: 'Pop, Country, Hip-Hop',
-        description: 'Optional: Specify a musical style or genre for the lyrics',
-        displayOptions: {
-            show: {
-                resource: ['advancedGeneration'],
-                operation: ['promptToLyrics'],
-            },
-        },
-    },
-    {
-        displayName: 'Webhook URL',
-        name: 'webhook_url',
-        type: 'string',
-        default: '',
-        placeholder: 'https://your-webhook.com/callback',
-        description: 'Optional URL to receive a callback when processing is complete',
         displayOptions: {
             show: {
                 resource: ['advancedGeneration'],

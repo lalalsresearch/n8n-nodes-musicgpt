@@ -1,4 +1,4 @@
-import { IExecuteFunctions, ILoadOptionsFunctions, IPollFunctions, IHttpRequestMethods } from 'n8n-workflow';
+import { IExecuteFunctions, ILoadOptionsFunctions, IPollFunctions, IHttpRequestMethods, NodeApiError } from 'n8n-workflow';
 import { API_BASE_URL } from '../constants';
 
 export async function apiRequest(
@@ -26,43 +26,7 @@ export async function apiRequest(
         const response = await this.helpers.httpRequestWithAuthentication.call(this, 'musicGPTApi', options);
         return response;
     } catch (error: any) {
-        throw error;
+        throw new NodeApiError(this.getNode(), error);
     }
 }
 
-export async function apiRequestAllItems(
-    this: IExecuteFunctions | ILoadOptionsFunctions | IPollFunctions,
-    method: string,
-    endpoint: string,
-    body: any = {},
-    query: any = {},
-): Promise<any[]> {
-    const returnData: any[] = [];
-    let responseData;
-    let lastEvaluatedKey = '';
-
-    do {
-        const queryWithPagination = { ...query };
-        if (lastEvaluatedKey) {
-            queryWithPagination.LastEvaluatedKey = lastEvaluatedKey;
-        }
-
-        responseData = await apiRequest.call(this, method, endpoint, body, queryWithPagination);
-
-        if (responseData.success) {
-            if (responseData.conversions) {
-                returnData.push(...responseData.conversions);
-            } else if (responseData.voices) {
-                returnData.push(...responseData.voices);
-            } else if (responseData.conversion) {
-                returnData.push(responseData.conversion);
-            }
-
-            lastEvaluatedKey = responseData.LastEvaluatedKey || '';
-        } else {
-            break;
-        }
-    } while (lastEvaluatedKey);
-
-    return returnData;
-}
