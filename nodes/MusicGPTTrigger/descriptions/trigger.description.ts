@@ -7,24 +7,12 @@ export const getConversionByIdFields: INodeProperties[] = [
         type: 'options',
         options: [
             {
-                name: 'Voice Changer',
-                value: 'voice_changer',
-            },
-            {
-                name: 'Text to Speech',
-                value: 'text_to_speech',
-            },
-            {
-                name: 'Cover Song',
-                value: 'cover_song',
-            },
-            {
                 name: 'Audio Generation',
                 value: 'audio_generation',
             },
             {
-                name: 'Remix',
-                value: 'remix',
+                name: 'Cover Song',
+                value: 'cover_song',
             },
             {
                 name: 'Extraction',
@@ -33,6 +21,18 @@ export const getConversionByIdFields: INodeProperties[] = [
             {
                 name: 'Other',
                 value: 'other',
+            },
+            {
+                name: 'Remix',
+                value: 'remix',
+            },
+            {
+                name: 'Text to Speech',
+                value: 'text_to_speech',
+            },
+            {
+                name: 'Voice Changer',
+                value: 'voice_changer',
             },
         ],
         default: 'voice_changer',
@@ -83,24 +83,12 @@ export const getConversionsByUserFields: INodeProperties[] = [
                 value: '',
             },
             {
-                name: 'Voice Changer',
-                value: 'voice_changer',
-            },
-            {
-                name: 'Text to Speech',
-                value: 'text_to_speech',
-            },
-            {
-                name: 'Cover Song',
-                value: 'cover_song',
-            },
-            {
                 name: 'Audio Generation',
                 value: 'audio_generation',
             },
             {
-                name: 'Remix',
-                value: 'remix',
+                name: 'Cover Song',
+                value: 'cover_song',
             },
             {
                 name: 'Extraction',
@@ -109,6 +97,18 @@ export const getConversionsByUserFields: INodeProperties[] = [
             {
                 name: 'Other',
                 value: 'other',
+            },
+            {
+                name: 'Remix',
+                value: 'remix',
+            },
+            {
+                name: 'Text to Speech',
+                value: 'text_to_speech',
+            },
+            {
+                name: 'Voice Changer',
+                value: 'voice_changer',
             },
         ],
         default: '',
@@ -171,12 +171,12 @@ export const getConversionsByUserFields: INodeProperties[] = [
         displayName: 'Limit',
         name: 'limit',
         type: 'number',
-        default: 10,
+        default: 20,
         typeOptions: {
             minValue: 1,
             maxValue: 100,
         },
-        description: 'Maximum number of conversions to check per poll',
+        description: 'Number of results to return',
         displayOptions: {
             show: {
                 triggerOn: ['getConversionsByUser'],
@@ -187,6 +187,7 @@ export const getConversionsByUserFields: INodeProperties[] = [
         displayName: 'Last Evaluated Key',
         name: 'LastEvaluatedKey',
         type: 'string',
+								typeOptions: { password: true },
         default: '',
         placeholder: 'key_from_previous_poll',
         description: 'Pagination key to continue from previous poll',

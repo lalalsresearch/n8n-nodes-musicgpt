@@ -15,7 +15,7 @@ export class MusicGPTTrigger implements INodeType {
     description: INodeTypeDescription = {
         displayName: 'MusicGPT Trigger',
         name: 'musicGPTTrigger',
-        icon: 'file:musicgpt.png',
+        icon: 'file:musicgpt.svg',
         group: ['trigger'],
         version: 1,
         subtitle: '={{$parameter["triggerOn"]}}',

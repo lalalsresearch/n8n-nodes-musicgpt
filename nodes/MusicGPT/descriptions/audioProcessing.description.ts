@@ -159,28 +159,28 @@ export const audioMasteringFields: INodeProperties[] = [
         type: 'options',
         options: [
             {
-                name: 'Same as Input',
-                value: '',
-            },
-            {
-                name: 'MP3',
-                value: 'mp3',
-            },
-            {
-                name: 'WAV',
-                value: 'wav',
+                name: 'AAC',
+                value: 'aac',
             },
             {
                 name: 'FLAC',
                 value: 'flac',
             },
             {
+                name: 'MP3',
+                value: 'mp3',
+            },
+            {
                 name: 'OGG',
                 value: 'ogg',
             },
             {
-                name: 'AAC',
-                value: 'aac',
+                name: 'Same as Input',
+                value: '',
+            },
+            {
+                name: 'WAV',
+                value: 'wav',
             },
             {
                 name: 'WEBM',
@@ -342,24 +342,24 @@ export const fileConvertFields: INodeProperties[] = [
         type: 'options',
         options: [
             {
-                name: 'MP3',
-                value: 'mp3',
-            },
-            {
-                name: 'WAV',
-                value: 'wav',
+                name: 'AAC',
+                value: 'aac',
             },
             {
                 name: 'FLAC',
                 value: 'flac',
             },
             {
+                name: 'MP3',
+                value: 'mp3',
+            },
+            {
                 name: 'OGG',
                 value: 'ogg',
             },
             {
-                name: 'AAC',
-                value: 'aac',
+                name: 'WAV',
+                value: 'wav',
             },
             {
                 name: 'WEBM',
@@ -433,11 +433,11 @@ export const fileConvertFields: INodeProperties[] = [
         type: 'options',
         options: [
             {
-                name: '16-bit (Standard)',
+                name: '16-Bit (Standard)',
                 value: '16',
             },
             {
-                name: '24-bit (Professional)',
+                name: '24-Bit (Professional)',
                 value: '24',
             },
         ],
@@ -478,12 +478,12 @@ export const audioTranscribeFields: INodeProperties[] = [
                 value: 'auto',
             },
             {
-                name: 'English',
-                value: 'en',
+                name: 'Chinese',
+                value: 'zh',
             },
             {
-                name: 'Spanish',
-                value: 'es',
+                name: 'English',
+                value: 'en',
             },
             {
                 name: 'French',
@@ -498,20 +498,20 @@ export const audioTranscribeFields: INodeProperties[] = [
                 value: 'it',
             },
             {
-                name: 'Portuguese',
-                value: 'pt',
-            },
-            {
-                name: 'Chinese',
-                value: 'zh',
-            },
-            {
                 name: 'Japanese',
                 value: 'ja',
             },
             {
                 name: 'Korean',
                 value: 'ko',
+            },
+            {
+                name: 'Portuguese',
+                value: 'pt',
+            },
+            {
+                name: 'Spanish',
+                value: 'es',
             },
         ],
         default: 'auto',
