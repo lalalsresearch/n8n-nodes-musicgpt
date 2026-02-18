@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.6] - 2026-02-17
+
+### Fixed
+- Added `peerDependencies` with `n8n-workflow` to package.json
+- Replaced raw `throw error` with `NodeApiError`/`NodeOperationError` from n8n-workflow in all node files
+- Fixed inpaint operation field name mismatch (`start_time`/`end_time` renamed to `replace_start_at`/`replace_end_at` to match API)
+- Removed unused `style` and `webhook_url` UI fields from `promptToLyrics` operation (not supported by API)
+- Fixed subtitle expression order from `operation: resource` to `resource: operation`
+- Added `noDataExpression: true` to `triggerOn` field in MusicGPT Trigger node
+- Removed unused `apiRequestAllItems` dead code from transport module
+- Added ESLint configuration and dev dependencies (`eslint`, `@typescript-eslint/parser`, `@typescript-eslint/eslint-plugin`, `eslint-plugin-n8n-nodes-base`)
+
 ## [0.1.5] - 2026-01-13
 
 ### Fixed
@@ -95,6 +107,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Version History
 
+- **0.1.6** - Error handling, ESLint setup, and field name fixes for n8n community node review
 - **0.1.5** - Fixed missing pairedItem linking in all operations
 - **0.1.4** - Previous version
 - **0.1.3** - Previous version

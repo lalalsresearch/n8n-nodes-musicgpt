@@ -5,6 +5,7 @@ import {
     INodePropertyOptions,
     INodeType,
     INodeTypeDescription,
+    NodeOperationError,
 } from 'n8n-workflow';
 
 import {
@@ -90,7 +91,7 @@ export class MusicGPT implements INodeType {
         icon: 'file:musicgpt.png',
         group: ['transform'],
         version: 1,
-        subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
+        subtitle: '={{$parameter["resource"] + ": " + $parameter["operation"]}}',
         description: 'Interact with MusicGPT API for audio processing and voice management',
         defaults: {
             name: 'MusicGPT',
@@ -547,7 +548,7 @@ export class MusicGPT implements INodeType {
                     });
                     continue;
                 }
-                throw error;
+                throw new NodeOperationError(this.getNode(), error as Error);
             }
         }
 
