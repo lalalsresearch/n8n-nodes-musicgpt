@@ -161,14 +161,14 @@ export const generateAudioFields: INodeProperties[] = [
         },
     },
     {
-        displayName: 'Voice',
+        displayName: 'Voice Name or ID',
         name: 'voice_id',
         type: 'options',
         typeOptions: {
             loadOptionsMethod: 'getVoices',
         },
         default: 'none',
-        description: 'Voice to use for the generated audio',
+        description: 'Voice to use for the generated audio. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
         displayOptions: {
             show: {
                 resource: ['audioGeneration'],
@@ -267,14 +267,14 @@ export const textToSpeechFields: INodeProperties[] = [
         },
     },
     {
-        displayName: 'Voice',
+        displayName: 'Voice Name or ID',
         name: 'voice_id',
         type: 'options',
         typeOptions: {
             loadOptionsMethod: 'getVoices',
         },
         default: 'none',
-        description: 'Voice to use for speech generation',
+        description: 'Voice to use for speech generation. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
         displayOptions: {
             show: {
                 resource: ['audioGeneration'],
@@ -313,15 +313,15 @@ export const textToSpeechFields: INodeProperties[] = [
         type: 'options',
         options: [
             { name: 'Auto Detect', value: 'auto' },
+            { name: 'Chinese', value: 'zh' },
             { name: 'English', value: 'en' },
-            { name: 'Spanish', value: 'es' },
             { name: 'French', value: 'fr' },
             { name: 'German', value: 'de' },
             { name: 'Italian', value: 'it' },
-            { name: 'Portuguese', value: 'pt' },
-            { name: 'Chinese', value: 'zh' },
             { name: 'Japanese', value: 'ja' },
             { name: 'Korean', value: 'ko' },
+            { name: 'Portuguese', value: 'pt' },
+            { name: 'Spanish', value: 'es' },
         ],
         default: 'auto',
         description: 'Language of the text',
@@ -351,7 +351,7 @@ export const textToSpeechFields: INodeProperties[] = [
 export const voiceChangerFields: INodeProperties[] = [
     ...audioSourceFields('voiceChanger'),
     {
-        displayName: 'Voice',
+        displayName: 'Voice Name or ID',
         name: 'voice_id',
         type: 'options',
         typeOptions: {
@@ -359,7 +359,7 @@ export const voiceChangerFields: INodeProperties[] = [
         },
         default: '',
         required: true,
-        description: 'Voice to transform the audio to',
+        description: 'Voice to transform the audio to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
         displayOptions: {
             show: {
                 resource: ['audioGeneration'],
@@ -426,7 +426,7 @@ export const voiceChangerFields: INodeProperties[] = [
 export const coverSongFields: INodeProperties[] = [
     ...audioSourceFields('coverSong'),
     {
-        displayName: 'Voice',
+        displayName: 'Voice Name or ID',
         name: 'voice_id',
         type: 'options',
         typeOptions: {
@@ -434,7 +434,7 @@ export const coverSongFields: INodeProperties[] = [
         },
         default: '',
         required: true,
-        description: 'Voice to use for the cover',
+        description: 'Voice to use for the cover. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
         displayOptions: {
             show: {
                 resource: ['audioGeneration'],
@@ -482,29 +482,29 @@ export const extractionFields: INodeProperties[] = [
         name: 'stems',
         type: 'multiOptions',
         options: [
-            { name: 'Vocals', value: 'vocals' },
-            { name: 'Instrumental', value: 'instrumental' },
-            { name: 'Male Vocal', value: 'male_vocal' },
-            { name: 'Female Vocal', value: 'female_vocal' },
-            { name: 'Lead Vocal', value: 'lead_vocal' },
+            { name: 'Acoustic Guitar', value: 'acoustic_guitar' },
             { name: 'Back Vocal', value: 'back_vocal' },
             { name: 'Bass', value: 'bass' },
-            { name: 'Drums', value: 'drums' },
-            { name: 'Guitar', value: 'guitar' },
-            { name: 'Piano', value: 'piano' },
-            { name: 'Keys', value: 'keys' },
-            { name: 'Strings', value: 'strings' },
-            { name: 'Winds', value: 'winds' },
-            { name: 'Rhythm Guitar', value: 'rhythm_guitar' },
-            { name: 'Solo Guitar', value: 'solo_guitar' },
-            { name: 'Acoustic Guitar', value: 'acoustic_guitar' },
-            { name: 'Electric Guitar', value: 'electric_guitar' },
-            { name: 'Kick Drum', value: 'kick_drum' },
-            { name: 'Snare Drum', value: 'snare_drum' },
-            { name: 'Toms', value: 'toms' },
-            { name: 'Hi-Hat', value: 'hi_hat' },
-            { name: 'Ride', value: 'ride' },
             { name: 'Crash', value: 'crash' },
+            { name: 'Drums', value: 'drums' },
+            { name: 'Electric Guitar', value: 'electric_guitar' },
+            { name: 'Female Vocal', value: 'female_vocal' },
+            { name: 'Guitar', value: 'guitar' },
+            { name: 'Hi-Hat', value: 'hi_hat' },
+            { name: 'Instrumental', value: 'instrumental' },
+            { name: 'Keys', value: 'keys' },
+            { name: 'Kick Drum', value: 'kick_drum' },
+            { name: 'Lead Vocal', value: 'lead_vocal' },
+            { name: 'Male Vocal', value: 'male_vocal' },
+            { name: 'Piano', value: 'piano' },
+            { name: 'Rhythm Guitar', value: 'rhythm_guitar' },
+            { name: 'Ride', value: 'ride' },
+            { name: 'Snare Drum', value: 'snare_drum' },
+            { name: 'Solo Guitar', value: 'solo_guitar' },
+            { name: 'Strings', value: 'strings' },
+            { name: 'Toms', value: 'toms' },
+            { name: 'Vocals', value: 'vocals' },
+            { name: 'Winds', value: 'winds' },
         ],
         default: ['vocals'],
         description: 'Audio stems to extract',

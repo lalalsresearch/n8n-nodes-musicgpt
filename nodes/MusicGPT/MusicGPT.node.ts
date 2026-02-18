@@ -88,7 +88,7 @@ export class MusicGPT implements INodeType {
     description: INodeTypeDescription = {
         displayName: 'MusicGPT',
         name: 'musicGPT',
-        icon: 'file:musicgpt.png',
+        icon: 'file:musicgpt.svg',
         group: ['transform'],
         version: 1,
         subtitle: '={{$parameter["resource"] + ": " + $parameter["operation"]}}',
@@ -146,6 +146,24 @@ export class MusicGPT implements INodeType {
                 },
                 options: [
                     {
+                        name: 'Cover Song',
+                        value: 'coverSong',
+                        description: 'Create a cover version with different voice',
+                        action: 'Create cover',
+                    },
+                    {
+                        name: 'Denoise',
+                        value: 'denoise',
+                        description: 'Remove noise from audio',
+                        action: 'Denoise audio',
+                    },
+                    {
+                        name: 'Extraction',
+                        value: 'extraction',
+                        description: 'Extract vocals, instrumentals, or stems',
+                        action: 'Extract audio',
+                    },
+                    {
                         name: 'Generate Audio',
                         value: 'generateAudio',
                         description: 'Generate music from prompts or lyrics',
@@ -163,24 +181,6 @@ export class MusicGPT implements INodeType {
                         description: 'Transform voice in audio',
                         action: 'Change voice',
                     },
-                    {
-                        name: 'Cover Song',
-                        value: 'coverSong',
-                        description: 'Create a cover version with different voice',
-                        action: 'Create cover',
-                    },
-                    {
-                        name: 'Extraction',
-                        value: 'extraction',
-                        description: 'Extract vocals, instrumentals, or stems',
-                        action: 'Extract audio',
-                    },
-                    {
-                        name: 'Denoise',
-                        value: 'denoise',
-                        description: 'Remove noise from audio',
-                        action: 'Denoise audio',
-                    },
                 ],
                 default: 'generateAudio',
             },
@@ -196,6 +196,30 @@ export class MusicGPT implements INodeType {
                 },
                 options: [
                     {
+                        name: 'Audio Mastering',
+                        value: 'audioMastering',
+                        description: 'Master audio for professional quality',
+                        action: 'Master audio',
+                    },
+                    {
+                        name: 'Audio to MIDI',
+                        value: 'audioToMidi',
+                        description: 'Convert audio to MIDI',
+                        action: 'Convert to MIDI',
+                    },
+                    {
+                        name: 'Audio Transcribe',
+                        value: 'audioTranscribe',
+                        description: 'Transcribe speech to text',
+                        action: 'Transcribe audio',
+                    },
+                    {
+                        name: 'Change Audio Speed',
+                        value: 'changeAudioSpeed',
+                        description: 'Adjust playback speed',
+                        action: 'Change speed',
+                    },
+                    {
                         name: 'Deecho',
                         value: 'deecho',
                         description: 'Remove echo from audio',
@@ -206,30 +230,6 @@ export class MusicGPT implements INodeType {
                         value: 'dereverb',
                         description: 'Remove reverb from audio',
                         action: 'Remove reverb',
-                    },
-                    {
-                        name: 'Audio Mastering',
-                        value: 'audioMastering',
-                        description: 'Master audio for professional quality',
-                        action: 'Master audio',
-                    },
-                    {
-                        name: 'Trim Audio',
-                        value: 'trimAudio',
-                        description: 'Cut audio to specific time range',
-                        action: 'Trim audio',
-                    },
-                    {
-                        name: 'Change Audio Speed',
-                        value: 'changeAudioSpeed',
-                        description: 'Adjust playback speed',
-                        action: 'Change speed',
-                    },
-                    {
-                        name: 'Audio to MIDI',
-                        value: 'audioToMidi',
-                        description: 'Convert audio to MIDI',
-                        action: 'Convert to MIDI',
                     },
                     {
                         name: 'Extract Key/BPM',
@@ -244,10 +244,10 @@ export class MusicGPT implements INodeType {
                         action: 'Convert format',
                     },
                     {
-                        name: 'Audio Transcribe',
-                        value: 'audioTranscribe',
-                        description: 'Transcribe speech to text',
-                        action: 'Transcribe audio',
+                        name: 'Trim Audio',
+                        value: 'trimAudio',
+                        description: 'Cut audio to specific time range',
+                        action: 'Trim audio',
                     },
                 ],
                 default: 'deecho',
@@ -264,12 +264,6 @@ export class MusicGPT implements INodeType {
                 },
                 options: [
                     {
-                        name: 'Remix',
-                        value: 'remix',
-                        description: 'Remix audio with AI',
-                        action: 'Remix audio',
-                    },
-                    {
                         name: 'Extend',
                         value: 'extend',
                         description: 'Extend audio duration',
@@ -282,6 +276,18 @@ export class MusicGPT implements INodeType {
                         action: 'Inpaint audio',
                     },
                     {
+                        name: 'Prompt to Lyrics',
+                        value: 'promptToLyrics',
+                        description: 'Generate lyrics from prompt',
+                        action: 'Generate lyrics',
+                    },
+                    {
+                        name: 'Remix',
+                        value: 'remix',
+                        description: 'Remix audio with AI',
+                        action: 'Remix audio',
+                    },
+                    {
                         name: 'Sing Over Instrumental',
                         value: 'singOverInstrumental',
                         description: 'Add vocals to instrumental track',
@@ -292,12 +298,6 @@ export class MusicGPT implements INodeType {
                         value: 'soundGenerator',
                         description: 'Generate sound effects from text',
                         action: 'Generate sound',
-                    },
-                    {
-                        name: 'Prompt to Lyrics',
-                        value: 'promptToLyrics',
-                        description: 'Generate lyrics from prompt',
-                        action: 'Generate lyrics',
                     },
                 ],
                 default: 'remix',

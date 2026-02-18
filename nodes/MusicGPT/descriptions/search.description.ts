@@ -10,7 +10,7 @@ export const getAllVoicesFields: INodeProperties[] = [
             minValue: 1,
             maxValue: 100,
         },
-        description: 'Maximum number of voices to retrieve per page',
+        description: 'Number of results to return',
         displayOptions: {
             show: {
                 resource: ['search'],
@@ -61,7 +61,7 @@ export const searchVoicesFields: INodeProperties[] = [
             minValue: 1,
             maxValue: 100,
         },
-        description: 'Maximum number of voices to retrieve per page',
+        description: 'Number of results to return',
         displayOptions: {
             show: {
                 resource: ['search'],
@@ -94,68 +94,16 @@ export const getConversionByIdFields: INodeProperties[] = [
         type: 'options',
         options: [
             {
+                name: 'Audio Cutter',
+                value: 'AUDIO_CUTTER',
+            },
+            {
                 name: 'Audio Generation',
                 value: 'MUSIC_AI',
             },
             {
-                name: 'Text to Speech',
-                value: 'TEXT_TO_SPEECH',
-            },
-            {
-                name: 'Voice Changer',
-                value: 'VOICE_CONVERSION',
-            },
-            {
-                name: 'Cover Song',
-                value: 'COVER',
-            },
-            {
-                name: 'Remix',
-                value: 'REMIX',
-            },
-            {
-                name: 'Extend',
-                value: 'EXTEND',
-            },
-            {
-                name: 'Inpaint',
-                value: 'INPAINT',
-            },
-            {
-                name: 'Sing Over Instrumental',
-                value: 'SING_OVER_INSTRUMENTAL',
-            },
-            {
-                name: 'Extraction',
-                value: 'EXTRACTION',
-            },
-            {
-                name: 'Stem Separation',
-                value: 'STEMS_SEPARATION',
-            },
-            {
-                name: 'Vocal Extraction',
-                value: 'VOCAL_EXTRACTION',
-            },
-            {
-                name: 'Denoising',
-                value: 'DENOISING',
-            },
-            {
-                name: 'Deecho',
-                value: 'DEECHO',
-            },
-            {
-                name: 'Dereverb',
-                value: 'DEREVERB',
-            },
-            {
                 name: 'Audio Mastering',
                 value: 'AUDIO_MASTERING',
-            },
-            {
-                name: 'Audio Cutter',
-                value: 'AUDIO_CUTTER',
             },
             {
                 name: 'Audio Speed Changer',
@@ -166,24 +114,76 @@ export const getConversionByIdFields: INodeProperties[] = [
                 value: 'AUDIO_TO_MIDI',
             },
             {
-                name: 'Key/BPM Extraction',
-                value: 'KEY_BPM_EXTRACTION',
+                name: 'Audio Transcription',
+                value: 'AUDIO_TRANSCRIPTION',
+            },
+            {
+                name: 'Cover Song',
+                value: 'COVER',
+            },
+            {
+                name: 'Deecho',
+                value: 'DEECHO',
+            },
+            {
+                name: 'Denoising',
+                value: 'DENOISING',
+            },
+            {
+                name: 'Dereverb',
+                value: 'DEREVERB',
+            },
+            {
+                name: 'Extend',
+                value: 'EXTEND',
+            },
+            {
+                name: 'Extraction',
+                value: 'EXTRACTION',
             },
             {
                 name: 'File Conversion',
                 value: 'FILE_CONVERSION',
             },
             {
-                name: 'Audio Transcription',
-                value: 'AUDIO_TRANSCRIPTION',
+                name: 'Inpaint',
+                value: 'INPAINT',
+            },
+            {
+                name: 'Key/BPM Extraction',
+                value: 'KEY_BPM_EXTRACTION',
+            },
+            {
+                name: 'Lyrics Generator',
+                value: 'LYRICS_GENERATOR',
+            },
+            {
+                name: 'Remix',
+                value: 'REMIX',
+            },
+            {
+                name: 'Sing Over Instrumental',
+                value: 'SING_OVER_INSTRUMENTAL',
             },
             {
                 name: 'Sound Generator',
                 value: 'SOUND_GENERATOR',
             },
             {
-                name: 'Lyrics Generator',
-                value: 'LYRICS_GENERATOR',
+                name: 'Stem Separation',
+                value: 'STEMS_SEPARATION',
+            },
+            {
+                name: 'Text to Speech',
+                value: 'TEXT_TO_SPEECH',
+            },
+            {
+                name: 'Vocal Extraction',
+                value: 'VOCAL_EXTRACTION',
+            },
+            {
+                name: 'Voice Changer',
+                value: 'VOICE_CONVERSION',
             },
         ],
         default: 'MUSIC_AI',
@@ -237,68 +237,16 @@ export const getConversionsByUserFields: INodeProperties[] = [
                 value: '',
             },
             {
+                name: 'Audio Cutter',
+                value: 'AUDIO_CUTTER',
+            },
+            {
                 name: 'Audio Generation',
                 value: 'MUSIC_AI',
             },
             {
-                name: 'Text to Speech',
-                value: 'TEXT_TO_SPEECH',
-            },
-            {
-                name: 'Voice Changer',
-                value: 'VOICE_CONVERSION',
-            },
-            {
-                name: 'Cover Song',
-                value: 'COVER',
-            },
-            {
-                name: 'Remix',
-                value: 'REMIX',
-            },
-            {
-                name: 'Extend',
-                value: 'EXTEND',
-            },
-            {
-                name: 'Inpaint',
-                value: 'INPAINT',
-            },
-            {
-                name: 'Sing Over Instrumental',
-                value: 'SING_OVER_INSTRUMENTAL',
-            },
-            {
-                name: 'Extraction',
-                value: 'EXTRACTION',
-            },
-            {
-                name: 'Stem Separation',
-                value: 'STEMS_SEPARATION',
-            },
-            {
-                name: 'Vocal Extraction',
-                value: 'VOCAL_EXTRACTION',
-            },
-            {
-                name: 'Denoising',
-                value: 'DENOISING',
-            },
-            {
-                name: 'Deecho',
-                value: 'DEECHO',
-            },
-            {
-                name: 'Dereverb',
-                value: 'DEREVERB',
-            },
-            {
                 name: 'Audio Mastering',
                 value: 'AUDIO_MASTERING',
-            },
-            {
-                name: 'Audio Cutter',
-                value: 'AUDIO_CUTTER',
             },
             {
                 name: 'Audio Speed Changer',
@@ -309,24 +257,76 @@ export const getConversionsByUserFields: INodeProperties[] = [
                 value: 'AUDIO_TO_MIDI',
             },
             {
-                name: 'Key/BPM Extraction',
-                value: 'KEY_BPM_EXTRACTION',
+                name: 'Audio Transcription',
+                value: 'AUDIO_TRANSCRIPTION',
+            },
+            {
+                name: 'Cover Song',
+                value: 'COVER',
+            },
+            {
+                name: 'Deecho',
+                value: 'DEECHO',
+            },
+            {
+                name: 'Denoising',
+                value: 'DENOISING',
+            },
+            {
+                name: 'Dereverb',
+                value: 'DEREVERB',
+            },
+            {
+                name: 'Extend',
+                value: 'EXTEND',
+            },
+            {
+                name: 'Extraction',
+                value: 'EXTRACTION',
             },
             {
                 name: 'File Conversion',
                 value: 'FILE_CONVERSION',
             },
             {
-                name: 'Audio Transcription',
-                value: 'AUDIO_TRANSCRIPTION',
+                name: 'Inpaint',
+                value: 'INPAINT',
+            },
+            {
+                name: 'Key/BPM Extraction',
+                value: 'KEY_BPM_EXTRACTION',
+            },
+            {
+                name: 'Lyrics Generator',
+                value: 'LYRICS_GENERATOR',
+            },
+            {
+                name: 'Remix',
+                value: 'REMIX',
+            },
+            {
+                name: 'Sing Over Instrumental',
+                value: 'SING_OVER_INSTRUMENTAL',
             },
             {
                 name: 'Sound Generator',
                 value: 'SOUND_GENERATOR',
             },
             {
-                name: 'Lyrics Generator',
-                value: 'LYRICS_GENERATOR',
+                name: 'Stem Separation',
+                value: 'STEMS_SEPARATION',
+            },
+            {
+                name: 'Text to Speech',
+                value: 'TEXT_TO_SPEECH',
+            },
+            {
+                name: 'Vocal Extraction',
+                value: 'VOCAL_EXTRACTION',
+            },
+            {
+                name: 'Voice Changer',
+                value: 'VOICE_CONVERSION',
             },
         ],
         default: '',
@@ -393,12 +393,12 @@ export const getConversionsByUserFields: INodeProperties[] = [
         displayName: 'Limit',
         name: 'limit',
         type: 'number',
-        default: 10,
+        default: 20,
         typeOptions: {
             minValue: 1,
             maxValue: 100,
         },
-        description: 'Maximum number of conversions to retrieve',
+        description: 'Number of results to return',
         displayOptions: {
             show: {
                 resource: ['search'],
@@ -410,6 +410,7 @@ export const getConversionsByUserFields: INodeProperties[] = [
         displayName: 'Last Evaluated Key',
         name: 'LastEvaluatedKey',
         type: 'string',
+								typeOptions: { password: true },
         default: '',
         placeholder: 'key_from_previous_request',
         description: 'Pagination key from the previous request to get the next page of results',

@@ -155,7 +155,7 @@ export const remixFields: INodeProperties[] = [
 export const extendFields: INodeProperties[] = [
     ...audioSourceFields('extend'),
     {
-        displayName: 'Extend After (seconds)',
+        displayName: 'Extend After (Seconds)',
         name: 'extend_after',
         type: 'number',
         default: 30,
