@@ -1,14 +1,15 @@
-import { IExecuteFunctions, ILoadOptionsFunctions, IPollFunctions, IHttpRequestMethods, NodeApiError } from 'n8n-workflow';
+import { IExecuteFunctions, ILoadOptionsFunctions, IPollFunctions, IHttpRequestMethods, IHttpRequestOptions, IDataObject, NodeApiError } from 'n8n-workflow';
 import { API_BASE_URL } from '../constants';
 
 export async function apiRequest(
     this: IExecuteFunctions | ILoadOptionsFunctions | IPollFunctions,
     method: string,
     endpoint: string,
-    body: any = {},
-    query: any = {},
+    body: IDataObject = {},
+    query: IDataObject = {},
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 ): Promise<any> {
-    const options: any = {
+    const options: IHttpRequestOptions = {
         method: method as IHttpRequestMethods,
         body,
         qs: query,
@@ -23,7 +24,7 @@ export async function apiRequest(
     }
 
     try {
-        const response = await this.helpers.httpRequestWithAuthentication.call(this, 'musicGPTApi', options);
+        const response = await this.helpers.httpRequestWithAuthentication.call(this, 'musicGptApi', options);
         return response;
     } catch (error: any) {
         throw new NodeApiError(this.getNode(), error);

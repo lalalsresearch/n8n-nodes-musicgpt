@@ -24,6 +24,10 @@
     "url": "https://github.com/lalalsresearch/n8n-nodes-musicgpt/issues"
   },
   "main": "index.js",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "tsc && gulp build:icons",
     "dev": "tsc --watch",
@@ -41,8 +45,8 @@
       "dist/credentials/MusicGPTApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/MusicGPT/MusicGPT.node.js",
-      "dist/nodes/MusicGPTTrigger/MusicGPTTrigger.node.js"
+      "dist/nodes/MusicGPT/MusicGpt.node.js",
+      "dist/nodes/MusicGPTTrigger/MusicGptTrigger.node.js"
     ]
   },
   "peerDependencies": {

@@ -11,7 +11,7 @@ const audioSourceFields = (operationName: string): INodeProperties[] => [
                 value: 'url',
             },
             {
-                name: 'File Upload',
+                name: 'Binary Property',
                 value: 'file',
             },
         ],
@@ -41,12 +41,14 @@ const audioSourceFields = (operationName: string): INodeProperties[] => [
         },
     },
     {
-        displayName: 'Audio File',
+        displayName: 'Binary Property Name',
         name: 'audio_file',
         type: 'string',
         default: 'data',
         required: true,
-        description: 'Binary property containing the audio file',
+        placeholder: 'data',
+        description: 'Name of the binary property from the previous node containing the audio file. The previous node must output binary data (e.g., HTTP Request, Read Binary Files, Webhook).',
+        hint: 'Usually "data". Ensure the previous node outputs binary file data.',
         displayOptions: {
             show: {
                 resource: ['audioGeneration'],
@@ -370,18 +372,8 @@ export const voiceChangerFields: INodeProperties[] = [
     {
         displayName: 'Remove Background',
         name: 'remove_background',
-        type: 'options',
-        options: [
-            {
-                name: 'No',
-                value: 0,
-            },
-            {
-                name: 'Yes',
-                value: 1,
-            },
-        ],
-        default: 0,
+        type: 'boolean',
+        default: false,
         description: 'Whether to remove background noise',
         displayOptions: {
             show: {

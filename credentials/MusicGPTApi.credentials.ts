@@ -6,7 +6,7 @@ import {
 } from 'n8n-workflow';
 
 export class MusicGPTApi implements ICredentialType {
-    name = 'musicGPTApi';
+    name = 'musicGptApi';
     displayName = 'MusicGPT API';
     documentationUrl = 'https://docs.musicgpt.com';
     properties: INodeProperties[] = [
