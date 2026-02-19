@@ -87,7 +87,7 @@ import { apiRequest } from './transport';
 export class MusicGPT implements INodeType {
     description: INodeTypeDescription = {
         displayName: 'MusicGPT',
-        name: 'musicGPT',
+        name: 'musicGpt',
         icon: 'file:musicgpt.svg',
         group: ['transform'],
         version: 1,
@@ -100,7 +100,7 @@ export class MusicGPT implements INodeType {
         outputs: ['main'],
         credentials: [
             {
-                name: 'musicGPTApi',
+                name: 'musicGptApi',
                 required: true,
             },
         ],

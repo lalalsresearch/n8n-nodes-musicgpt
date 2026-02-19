@@ -136,15 +136,13 @@ export async function voiceChanger(
 ): Promise<INodeExecutionData[]> {
     const audioData = await prepareAudioData.call(this, index);
     const voice_id = this.getNodeParameter('voice_id', index) as string;
-    const remove_background = this.getNodeParameter('remove_background', index, 0) as number;
+    const remove_background = this.getNodeParameter('remove_background', index, false) as boolean;
     const pitch = this.getNodeParameter('pitch', index, 0) as number;
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
-    
-
     const formData: any = {
         voice_id: voice_id,
-        remove_background: String(remove_background),
+        remove_background: remove_background ? '1' : '0',
         pitch: String(pitch),
     };
 
@@ -173,7 +171,7 @@ export async function voiceChanger(
 
     const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
-        'musicGPTApi',
+        'musicGptApi',
         options,
     );
 
@@ -199,8 +197,6 @@ export async function coverSong(
     const voice_id = this.getNodeParameter('voice_id', index) as string;
     const pitch = this.getNodeParameter('pitch', index, 0) as number;
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
-
-    
 
     const formData: any = {
         voice_id: voice_id,
@@ -232,7 +228,7 @@ export async function coverSong(
 
     const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
-        'musicGPTApi',
+        'musicGptApi',
         options,
     );
 
@@ -261,8 +257,6 @@ export async function extraction(
 
     const stemsJson = JSON.stringify(stems);
     const preprocessingJson = JSON.stringify(preprocessing_options);
-
-    
 
     const formData: any = {
         stems: stemsJson,
@@ -294,7 +288,7 @@ export async function extraction(
 
     const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
-        'musicGPTApi',
+        'musicGptApi',
         options,
     );
 
@@ -318,8 +312,6 @@ export async function denoise(
 ): Promise<INodeExecutionData[]> {
     const audioData = await prepareAudioData.call(this, index);
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
-
-    
 
     const formData: any = {};
 
@@ -348,7 +340,7 @@ export async function denoise(
 
     const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
-        'musicGPTApi',
+        'musicGptApi',
         options,
     );
 

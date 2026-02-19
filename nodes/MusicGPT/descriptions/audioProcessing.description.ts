@@ -219,6 +219,7 @@ export const trimAudioFields: INodeProperties[] = [
         name: 'start_time',
         type: 'number',
         default: 0,
+        required: true,
         typeOptions: {
             minValue: 0,
         },
@@ -235,6 +236,7 @@ export const trimAudioFields: INodeProperties[] = [
         name: 'end_time',
         type: 'number',
         default: 0,
+        required: true,
         typeOptions: {
             minValue: 0,
         },

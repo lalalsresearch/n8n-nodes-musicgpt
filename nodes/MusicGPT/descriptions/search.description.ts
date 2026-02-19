@@ -5,12 +5,11 @@ export const getAllVoicesFields: INodeProperties[] = [
         displayName: 'Limit',
         name: 'limit',
         type: 'number',
-        default: 20,
+        default: 50,
         typeOptions: {
             minValue: 1,
-            maxValue: 100,
         },
-        description: 'Number of results to return',
+        description: 'Max number of results to return',
         displayOptions: {
             show: {
                 resource: ['search'],
@@ -56,12 +55,11 @@ export const searchVoicesFields: INodeProperties[] = [
         displayName: 'Limit',
         name: 'limit',
         type: 'number',
-        default: 20,
+        default: 50,
         typeOptions: {
             minValue: 1,
-            maxValue: 100,
         },
-        description: 'Number of results to return',
+        description: 'Max number of results to return',
         displayOptions: {
             show: {
                 resource: ['search'],
@@ -393,12 +391,11 @@ export const getConversionsByUserFields: INodeProperties[] = [
         displayName: 'Limit',
         name: 'limit',
         type: 'number',
-        default: 20,
+        default: 50,
         typeOptions: {
             minValue: 1,
-            maxValue: 100,
         },
-        description: 'Number of results to return',
+        description: 'Max number of results to return',
         displayOptions: {
             show: {
                 resource: ['search'],

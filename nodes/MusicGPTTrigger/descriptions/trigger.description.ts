@@ -8,34 +8,34 @@ export const getConversionByIdFields: INodeProperties[] = [
         options: [
             {
                 name: 'Audio Generation',
-                value: 'audio_generation',
+                value: 'MUSIC_AI',
             },
             {
                 name: 'Cover Song',
-                value: 'cover_song',
+                value: 'COVER',
             },
             {
                 name: 'Extraction',
-                value: 'extraction',
+                value: 'EXTRACTION',
             },
             {
                 name: 'Other',
-                value: 'other',
+                value: 'OTHER',
             },
             {
                 name: 'Remix',
-                value: 'remix',
+                value: 'REMIX',
             },
             {
                 name: 'Text to Speech',
-                value: 'text_to_speech',
+                value: 'TEXT_TO_SPEECH',
             },
             {
                 name: 'Voice Changer',
-                value: 'voice_changer',
+                value: 'VOICE_CONVERSION',
             },
         ],
-        default: 'voice_changer',
+        default: 'VOICE_CONVERSION',
         required: true,
         description: 'Type of conversion to monitor',
         displayOptions: {
@@ -84,31 +84,31 @@ export const getConversionsByUserFields: INodeProperties[] = [
             },
             {
                 name: 'Audio Generation',
-                value: 'audio_generation',
+                value: 'MUSIC_AI',
             },
             {
                 name: 'Cover Song',
-                value: 'cover_song',
+                value: 'COVER',
             },
             {
                 name: 'Extraction',
-                value: 'extraction',
+                value: 'EXTRACTION',
             },
             {
                 name: 'Other',
-                value: 'other',
+                value: 'OTHER',
             },
             {
                 name: 'Remix',
-                value: 'remix',
+                value: 'REMIX',
             },
             {
                 name: 'Text to Speech',
-                value: 'text_to_speech',
+                value: 'TEXT_TO_SPEECH',
             },
             {
                 name: 'Voice Changer',
-                value: 'voice_changer',
+                value: 'VOICE_CONVERSION',
             },
         ],
         default: '',
@@ -171,12 +171,11 @@ export const getConversionsByUserFields: INodeProperties[] = [
         displayName: 'Limit',
         name: 'limit',
         type: 'number',
-        default: 20,
+        default: 50,
         typeOptions: {
             minValue: 1,
-            maxValue: 100,
         },
-        description: 'Number of results to return',
+        description: 'Max number of results to return',
         displayOptions: {
             show: {
                 triggerOn: ['getConversionsByUser'],

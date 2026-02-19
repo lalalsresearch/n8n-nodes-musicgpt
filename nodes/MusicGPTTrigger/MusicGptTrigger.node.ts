@@ -14,7 +14,7 @@ import { getConversionByIdFields, getConversionsByUserFields } from './descripti
 export class MusicGPTTrigger implements INodeType {
     description: INodeTypeDescription = {
         displayName: 'MusicGPT Trigger',
-        name: 'musicGPTTrigger',
+        name: 'musicGptTrigger',
         icon: 'file:musicgpt.svg',
         group: ['trigger'],
         version: 1,
@@ -27,7 +27,7 @@ export class MusicGPTTrigger implements INodeType {
         outputs: ['main'],
         credentials: [
             {
-                name: 'musicGPTApi',
+                name: 'musicGptApi',
                 required: true,
             },
         ],
@@ -112,7 +112,7 @@ export class MusicGPTTrigger implements INodeType {
             const startDate = this.getNodeParameter('startDate', '') as string;
             const endDate = this.getNodeParameter('endDate', '') as string;
             const sortOrder = this.getNodeParameter('sortOrder', 'DESC') as string;
-            const limit = this.getNodeParameter('limit', 10) as number;
+            const limit = this.getNodeParameter('limit', 50) as number;
 
             const webhookData = this.getWorkflowStaticData('node');
 

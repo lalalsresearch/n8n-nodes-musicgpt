@@ -45,8 +45,8 @@
       "dist/credentials/MusicGPTApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/MusicGPT/MusicGPT.node.js",
-      "dist/nodes/MusicGPTTrigger/MusicGPTTrigger.node.js"
+      "dist/nodes/MusicGPT/MusicGpt.node.js",
+      "dist/nodes/MusicGPTTrigger/MusicGptTrigger.node.js"
     ]
   },
   "peerDependencies": {

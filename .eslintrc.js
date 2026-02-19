@@ -11,11 +11,8 @@ module.exports = {
 		'plugin:n8n-nodes-base/credentials',
 	],
 	rules: {
-		'n8n-nodes-base/node-filename-against-convention': 'off',
+		// This rule is for the main n8n repository (camelCase short identifiers).
+		// Community nodes must use full HTTP URLs (enforced by cred-class-field-documentation-url-not-http-url).
 		'n8n-nodes-base/cred-class-field-documentation-url-miscased': 'off',
-		'n8n-nodes-base/node-class-description-name-miscased': 'off',
-		'n8n-nodes-base/node-param-default-wrong-for-limit': 'off',
-		'n8n-nodes-base/node-param-type-options-max-value-present': 'off',
-		'n8n-nodes-base/node-param-description-wrong-for-limit': 'off',
 	},
 };

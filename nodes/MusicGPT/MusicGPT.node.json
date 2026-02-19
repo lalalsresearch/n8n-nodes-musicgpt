@@ -3,20 +3,11 @@
     "nodeVersion": "1.0",
     "codex": {
         "categories": [
-            "AI",
-            "Audio",
-            "Music"
+            "AI"
         ],
         "subcategories": {
             "AI": [
                 "Audio Processing"
-            ],
-            "Audio": [
-                "Generation",
-                "Conversion"
-            ],
-            "Music": [
-                "AI Generation"
             ]
         },
         "resources": {

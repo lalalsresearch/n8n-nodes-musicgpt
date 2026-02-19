@@ -35,8 +35,6 @@ export async function deecho(
     const audioData = await prepareAudioData.call(this, index);
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
-    
-
     const formData: any = {};
 
     if (audioData.audio_file) {
@@ -64,7 +62,7 @@ export async function deecho(
 
     const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
-        'musicGPTApi',
+        'musicGptApi',
         options,
     );
 
@@ -87,8 +85,6 @@ export async function dereverb(
 ): Promise<INodeExecutionData[]> {
     const audioData = await prepareAudioData.call(this, index);
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
-
-    
 
     const formData: any = {};
 
@@ -117,7 +113,7 @@ export async function dereverb(
 
     const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
-        'musicGPTApi',
+        'musicGptApi',
         options,
     );
 
@@ -142,8 +138,6 @@ export async function audioMastering(
     const referenceAudioSource = this.getNodeParameter('referenceAudioSource', index) as string;
     const output_extension = this.getNodeParameter('output_extension', index, '') as string;
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
-
-    
 
     const formData: any = {};
 
@@ -199,7 +193,7 @@ export async function audioMastering(
 
     const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
-        'musicGPTApi',
+        'musicGptApi',
         options,
     );
 
@@ -224,8 +218,6 @@ export async function trimAudio(
     const start_time = this.getNodeParameter('start_time', index) as number;
     const end_time = this.getNodeParameter('end_time', index) as number;
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
-
-    
 
     const formData: any = {
         start_time: String(start_time),
@@ -257,7 +249,7 @@ export async function trimAudio(
 
     const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
-        'musicGPTApi',
+        'musicGptApi',
         options,
     );
 
@@ -281,8 +273,6 @@ export async function changeAudioSpeed(
     const audioData = await prepareAudioData.call(this, index);
     const speed_factor = this.getNodeParameter('speed_factor', index) as number;
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
-
-    
 
     const formData: any = {
         speed_factor: String(speed_factor),
@@ -313,7 +303,7 @@ export async function changeAudioSpeed(
 
     const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
-        'musicGPTApi',
+        'musicGptApi',
         options,
     );
 
@@ -336,8 +326,6 @@ export async function audioToMidi(
 ): Promise<INodeExecutionData[]> {
     const audioData = await prepareAudioData.call(this, index);
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
-
-    
 
     const formData: any = {};
 
@@ -366,7 +354,7 @@ export async function audioToMidi(
 
     const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
-        'musicGPTApi',
+        'musicGptApi',
         options,
     );
 
@@ -389,8 +377,6 @@ export async function extractKeyBpm(
 ): Promise<INodeExecutionData[]> {
     const audioData = await prepareAudioData.call(this, index);
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
-
-    
 
     const formData: any = {};
 
@@ -419,7 +405,7 @@ export async function extractKeyBpm(
 
     const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
-        'musicGPTApi',
+        'musicGptApi',
         options,
     );
 
@@ -445,8 +431,6 @@ export async function fileConvert(
     const target_sr = this.getNodeParameter('target_sr', index, '44100') as string;
     const target_bit_depth = this.getNodeParameter('target_bit_depth', index, '16') as string;
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
-
-    
 
     const formData: any = {
         target_format: target_format,
@@ -479,7 +463,7 @@ export async function fileConvert(
 
     const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
-        'musicGPTApi',
+        'musicGptApi',
         options,
     );
 
@@ -503,8 +487,6 @@ export async function audioTranscribe(
     const audioData = await prepareAudioData.call(this, index);
     const language = this.getNodeParameter('language', index, '') as string;
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
-
-    
 
     const formData: any = {};
 
@@ -537,7 +519,7 @@ export async function audioTranscribe(
 
     const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
-        'musicGPTApi',
+        'musicGptApi',
         options,
     );
 

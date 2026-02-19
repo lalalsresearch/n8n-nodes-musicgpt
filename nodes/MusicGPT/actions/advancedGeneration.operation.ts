@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IDataObject, INodeExecutionData } from 'n8n-workflow';
+import { IExecuteFunctions, IDataObject, INodeExecutionData, NodeOperationError } from 'n8n-workflow';
 import { apiRequest } from '../transport';
 import { API_BASE_URL } from '../constants';
 
@@ -81,7 +81,7 @@ export async function remix(
 
         const response = await this.helpers.httpRequestWithAuthentication.call(
             this,
-            'musicGPTApi',
+            'musicGptApi',
             options,
         );
 
@@ -176,8 +176,6 @@ export async function extend(
             formData.webhook_url = webhook_url;
         }
 
-        
-
         const options = {
             method: 'POST' as const,
             url: `${API_BASE_URL}/api/public/v1/extend`,
@@ -196,7 +194,7 @@ export async function extend(
 
         const response = await this.helpers.httpRequestWithAuthentication.call(
             this,
-            'musicGPTApi',
+            'musicGptApi',
             options,
         );
 
@@ -289,8 +287,6 @@ export async function inpaint(
             formData.webhook_url = webhook_url;
         }
 
-        
-
         const options = {
             method: 'POST' as const,
             url: `${API_BASE_URL}/api/public/v1/inpaint`,
@@ -309,7 +305,7 @@ export async function inpaint(
 
         const response = await this.helpers.httpRequestWithAuthentication.call(
             this,
-            'musicGPTApi',
+            'musicGptApi',
             options,
         );
 
@@ -377,7 +373,7 @@ export async function singOverInstrumental(
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
     if (!lyrics || lyrics.trim() === '') {
-        throw new Error('Lyrics are required for Sing Over Instrumental. Please provide the lyrics you want to sing over the instrumental.');
+        throw new NodeOperationError(this.getNode(), 'Lyrics are required for Sing Over Instrumental. Please provide the lyrics you want to sing over the instrumental.');
     }
 
     if (audioData.audio_file) {
@@ -401,8 +397,6 @@ export async function singOverInstrumental(
             formData.webhook_url = webhook_url;
         }
 
-        
-
         const options = {
             method: 'POST' as const,
             url: `${API_BASE_URL}/api/public/v1/sing_over_instrumental`,
@@ -421,7 +415,7 @@ export async function singOverInstrumental(
 
         const response = await this.helpers.httpRequestWithAuthentication.call(
             this,
-            'musicGPTApi',
+            'musicGptApi',
             options,
         );
 
@@ -485,36 +479,34 @@ export async function soundGenerator(
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
     if (!prompt || prompt.trim() === '') {
-        throw new Error('Prompt is required and cannot be empty for sound generation. Please provide a description of the sound you want to generate.');
+        throw new NodeOperationError(this.getNode(), 'Prompt is required and cannot be empty for sound generation. Please provide a description of the sound you want to generate.');
     }
 
     const cleanPrompt = prompt.trim();
 
     if (cleanPrompt.length > 300) {
-        throw new Error(`Prompt is too long (${cleanPrompt.length} characters). Maximum allowed is 300 characters.`);
+        throw new NodeOperationError(this.getNode(), `Prompt is too long (${cleanPrompt.length} characters). Maximum allowed is 300 characters.`);
     }
 
-    
-
-    const form: any = {
+    const formData: any = {
         prompt: cleanPrompt,
         audio_length: audio_length,
     };
 
     if (webhook_url) {
-        form.webhook_url = webhook_url;
+        formData.webhook_url = webhook_url;
     }
 
     const options = {
         method: 'POST' as const,
         url: `${API_BASE_URL}/api/public/v1/sound_generator`,
-        form: form,
+        formData: formData,
         json: true,
     };
 
     const response = await this.helpers.httpRequestWithAuthentication.call(
         this,
-        'musicGPTApi',
+        'musicGptApi',
         options,
     );
 
