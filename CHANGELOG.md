@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.7] - 2026-02-21
+
+### Fixed
+- Renamed node class names to comply with n8n camelCase convention (`MusicGPT` → `MusicGpt`, `MusicGPTTrigger` → `MusicGptTrigger`) and updated credential internal name (`musicGPTApi` → `musicGptApi`)
+
 ## [0.1.6] - 2026-02-17
 
 ### Fixed
@@ -107,6 +112,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Version History
 
+- **0.1.7** - n8n naming convention compliance, functional bug fixes, and type safety improvements
 - **0.1.6** - Error handling, ESLint setup, and field name fixes for n8n community node review
 - **0.1.5** - Fixed missing pairedItem linking in all operations
 - **0.1.4** - Previous version

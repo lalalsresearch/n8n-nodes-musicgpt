@@ -1,5 +1,5 @@
 {
-    "node": "n8n-nodes-musicgpt.MusicGPT",
+    "node": "n8n-nodes-musicgpt.MusicGpt",
     "nodeVersion": "1.0",
     "codex": {
         "categories": [

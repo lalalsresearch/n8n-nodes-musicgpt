@@ -11,7 +11,7 @@ import {
 import { apiRequest } from '../MusicGPT/transport';
 import { getConversionByIdFields, getConversionsByUserFields } from './descriptions/trigger.description';
 
-export class MusicGPTTrigger implements INodeType {
+export class MusicGptTrigger implements INodeType {
     description: INodeTypeDescription = {
         displayName: 'MusicGPT Trigger',
         name: 'musicGptTrigger',
