@@ -186,7 +186,6 @@ export const getConversionsByUserFields: INodeProperties[] = [
         displayName: 'Last Evaluated Key',
         name: 'LastEvaluatedKey',
         type: 'string',
-								typeOptions: { password: true },
         default: '',
         placeholder: 'key_from_previous_poll',
         description: 'Pagination key to continue from previous poll',

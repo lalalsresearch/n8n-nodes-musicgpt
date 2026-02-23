@@ -407,7 +407,6 @@ export const getConversionsByUserFields: INodeProperties[] = [
         displayName: 'Last Evaluated Key',
         name: 'LastEvaluatedKey',
         type: 'string',
-								typeOptions: { password: true },
         default: '',
         placeholder: 'key_from_previous_request',
         description: 'Pagination key from the previous request to get the next page of results',
