@@ -406,8 +406,8 @@ export const getConversionsByUserFields: INodeProperties[] = [
     {
         displayName: 'Last Evaluated Key',
         name: 'LastEvaluatedKey',
+        // eslint-disable-next-line n8n-nodes-base/cred-class-field-type-options-password-missing
         type: 'string',
-								typeOptions: { password: true },
         default: '',
         placeholder: 'key_from_previous_request',
         description: 'Pagination key from the previous request to get the next page of results',
