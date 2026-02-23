@@ -185,6 +185,7 @@ export const getConversionsByUserFields: INodeProperties[] = [
     {
         displayName: 'Last Evaluated Key',
         name: 'LastEvaluatedKey',
+        // eslint-disable-next-line n8n-nodes-base/cred-class-field-type-options-password-missing
         type: 'string',
         default: '',
         placeholder: 'key_from_previous_poll',
