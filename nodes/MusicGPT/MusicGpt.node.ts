@@ -84,7 +84,7 @@ import {
 
 import { apiRequest } from './transport';
 
-export class MusicGPT implements INodeType {
+export class MusicGpt implements INodeType {
     description: INodeTypeDescription = {
         displayName: 'MusicGPT',
         name: 'musicGpt',
