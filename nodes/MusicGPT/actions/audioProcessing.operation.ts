@@ -220,8 +220,8 @@ export async function trimAudio(
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
     const formData: any = {
-        start_time: String(start_time),
-        end_time: String(end_time),
+        start_time: String(start_time * 1000),
+        end_time: String(end_time * 1000),
     };
 
     if (audioData.audio_file) {
@@ -275,7 +275,7 @@ export async function changeAudioSpeed(
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
     const formData: any = {
-        speed_factor: String(speed_factor),
+        speed_change_factor: String(speed_factor),
     };
 
     if (audioData.audio_file) {
@@ -490,7 +490,7 @@ export async function audioTranscribe(
 
     const formData: any = {};
 
-    if (language) {
+    if (language && language !== 'auto') {
         formData.language = language;
     }
 

@@ -92,12 +92,10 @@ export async function textToSpeech(
 ): Promise<INodeExecutionData[]> {
     const text = this.getNodeParameter('text', index) as string;
     const voiceSelection = this.getNodeParameter('voiceSelection', index, 'gender') as string;
-    const language = this.getNodeParameter('language', index, 'auto') as string;
     const webhook_url = this.getNodeParameter('webhook_url', index, '') as string;
 
     const body: IDataObject = {
         text,
-        language,
     };
 
     if (voiceSelection === 'voice') {

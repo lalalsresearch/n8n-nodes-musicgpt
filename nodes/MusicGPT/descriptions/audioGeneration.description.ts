@@ -310,31 +310,6 @@ export const textToSpeechFields: INodeProperties[] = [
         },
     },
     {
-        displayName: 'Language',
-        name: 'language',
-        type: 'options',
-        options: [
-            { name: 'Auto Detect', value: 'auto' },
-            { name: 'Chinese', value: 'zh' },
-            { name: 'English', value: 'en' },
-            { name: 'French', value: 'fr' },
-            { name: 'German', value: 'de' },
-            { name: 'Italian', value: 'it' },
-            { name: 'Japanese', value: 'ja' },
-            { name: 'Korean', value: 'ko' },
-            { name: 'Portuguese', value: 'pt' },
-            { name: 'Spanish', value: 'es' },
-        ],
-        default: 'auto',
-        description: 'Language of the text',
-        displayOptions: {
-            show: {
-                resource: ['audioGeneration'],
-                operation: ['textToSpeech'],
-            },
-        },
-    },
-    {
         displayName: 'Webhook URL',
         name: 'webhook_url',
         type: 'string',

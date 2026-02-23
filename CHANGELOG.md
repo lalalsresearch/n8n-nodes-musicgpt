@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.8] - 2026-02-23
+
+### Fixed
+- `changeAudioSpeed`: Corrected API parameter name from `speed_factor` to `speed_change_factor` (was silently ignored by the API)
+- `changeAudioSpeed`: Expanded speed range from `0.5–2.0` to `0.25–4.0` to match the full API-supported range
+- `trimAudio`: Fixed unit mismatch — UI accepts seconds and now correctly converts to milliseconds before sending to the API (`start_time` / `end_time`)
+- `textToSpeech`: Removed unsupported `language` parameter (not accepted by `/TextToSpeech` endpoint) from both the UI and request body
+- `audioTranscribe`: Fixed `language='auto'` being sent to the API; auto-detect is now correctly triggered by omitting the field (API default)
+
 ## [0.1.7] - 2026-02-21
 
 ### Fixed
@@ -112,6 +121,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Version History
 
+- **0.1.8** - API parameter bug fixes (changeAudioSpeed, trimAudio unit, textToSpeech language, audioTranscribe auto-detect)
 - **0.1.7** - n8n naming convention compliance, functional bug fixes, and type safety improvements
 - **0.1.6** - Error handling, ESLint setup, and field name fixes for n8n community node review
 - **0.1.5** - Fixed missing pairedItem linking in all operations

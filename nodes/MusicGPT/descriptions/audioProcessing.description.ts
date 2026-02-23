@@ -272,11 +272,11 @@ export const changeAudioSpeedFields: INodeProperties[] = [
         type: 'number',
         default: 1.0,
         typeOptions: {
-            minValue: 0.5,
-            maxValue: 2.0,
+            minValue: 0.25,
+            maxValue: 4.0,
             numberPrecision: 2,
         },
-        description: 'Speed multiplier for the audio. 0.5 = half speed, 2.0 = double speed.',
+        description: 'Speed multiplier for the audio. 0.25 = quarter speed, 1.0 = normal, 4.0 = quadruple speed.',
         displayOptions: {
             show: {
                 resource: ['audioProcessing'],
